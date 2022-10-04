@@ -34,9 +34,20 @@ func (ll *LinkedList) Display() {
 	}
 }
 
+func (ll *LinkedList) RemoveHead() {
+	if ll.head == nil {
+		fmt.Println("Cannot remove empty linked list!")
+	} else {
+		ll.head = ll.head.next
+	}
+}
+
 func main() {
 	linkedList := LinkedList{}
 	linkedList.Insert(1)
 	linkedList.Insert(2)
+	linkedList.RemoveHead()
+	linkedList.RemoveHead()
+	linkedList.RemoveHead()
 	linkedList.Display()
 }
